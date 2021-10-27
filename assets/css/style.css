@@ -1,6 +1,8 @@
-:root { 
+/* :root { 
  
-}
+} */
+
+
 html {
     scroll-behavior: smooth;
 }
@@ -13,20 +15,23 @@ body {
 }
 
 header {
-    background-color: rgba(126, 161, 142, 0.9);
+    background-color: rgba(126, 161, 142, 0.8);
     
 }
 
 .container {
     padding: 15px;
     /*  add comment here */
+    display: flex;
+    justify-content: space-between;
+    
 }
 .col {
     padding: 5px;
 }
 .card {
     padding: 10px;
-    background-color: rgba(126, 161, 142, 0.9);
+    background-color: rgba(212, 221, 216, 0.8);
 
 }
 
@@ -36,4 +41,21 @@ header {
 
 .past-city {
     background-color: rgba(126, 161, 142, 0.7);
+}
+
+.date {
+    display: flex;
+    justify-content: space-between;
+}
+.weather-head {
+    display:flex;
+    flex-wrap: wrap;
+    /* flex-direction: row; */
+}
+.card-body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+
 }
