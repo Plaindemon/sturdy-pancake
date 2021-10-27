@@ -12,10 +12,7 @@ var citySearch = document.getElementById("city-search-btn");
 //
 var cityName = document.getElementById('city-name');
 var pastCity = document.getElementById('past-city')
-// variable to create the search form input
-// var searchTextBox = document.createElement("p");
-// searchTextBox.textContent = "Ohio";
-// searchTextBox;
+
 
 var searchBtn = function() {
     

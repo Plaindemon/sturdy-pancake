@@ -1,7 +1,39 @@
+:root { 
+ 
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-image: url('/assets/images/clouds.jpg');
+    position: sticky;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: rgba(126, 161, 142, 0.9);
+    
+}
+
+.container {
+    padding: 15px;
+    /*  add comment here */
+}
+.col {
+    padding: 5px;
+}
+.card {
+    padding: 10px;
+    background-color: rgba(126, 161, 142, 0.9);
+
+}
+
 #city-search-btn {
-    background-color: #089580;
+    background-color: rgba(126, 161, 142, 0.7);
 }
 
 .past-city {
-    background-color: #089580;
+    background-color: rgba(126, 161, 142, 0.7);
 }
