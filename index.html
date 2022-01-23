@@ -18,11 +18,14 @@
         <div class="col">
 
             <div class="card">
-                <h3 class="card-header">Search for a city: </h3>
-                <form id="user-form" class="card-body">
-                    <input name="city-name" id="city-name" type="text" autofocus="true" class="form-input"/>
-                    <button type="submit" class="btn" id="city-search-btn">search</button>
-                </form>
+                <div class="card">
+                    <h3 class="card-header">Search for a city: </h3>
+                    <input id="city-input" type="text" class="form-control" placeholder="input city name" aria-label="input city name">
+                    <div class="input-group-append">
+                    <button class="btn" type="button" id="city-search-btn">Search</button>
+               </div>
+                
+                
 
             </div>
 
@@ -41,7 +44,7 @@
     </main>
 
 <!-- Separate container for Todays weather to be focused on -->
-<div class="container">
+<div class="container" id="weather-container" >
     <div class="flex-row">
     <div class="col card">
         <!-- Start of the content of the container -->
@@ -52,10 +55,12 @@
             <h4 class="card-title date" id="date"><strong>DATE: (00,00,0000)</strong>
             <img src="http://openweathermap.org/img/wn/10d@2x.png">
             </h4>
+            <div id="location"></div>
             <p class="card-text temp-card" id="temp">Temperature:<p>
             <p class="card-text wind-card" id="wind">Wind Speed: </p>
             <p class="card-text humid-card" id="humid">Humidity Level: </p>
             <p class="card-text uv-index-card" id="uv-index">UV Index: </p>
+            <div id="description"></div>
             
         </div>
         
@@ -65,6 +70,7 @@
     </div>
 
 <div class="container">
+    <!-- five-day-body removed the class from div -->
     <div class="card">
         <h5 class="card-header">5 Day Forecast</h5>
         <div class="container card-body">

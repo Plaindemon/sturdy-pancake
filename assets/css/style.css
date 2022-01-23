@@ -7,7 +7,7 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    background-image: url('/assets/images/clouds.jpg');
+    /* background-image: url('/assets/images/clouds.jpg'); */
     position: sticky;
     background-attachment: fixed;
     background-size: cover;
@@ -24,6 +24,7 @@ header {
     /*  add comment here */
     display: flex;
     justify-content: space-between;
+    /* flex-wrap:wrap; */
     
 }
 .col {
@@ -46,6 +47,7 @@ header {
 .date {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .weather-head {
     display:flex;
@@ -59,3 +61,9 @@ header {
     flex-direction: column;
 
 }
+/* .container .five-day-body{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+} */
