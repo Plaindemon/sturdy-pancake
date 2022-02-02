@@ -16,7 +16,8 @@ console.log(searchHistory);
 function initSearch(lat, long) {
     var key = 'd1421d1863129a775873c0c766a5d5c6';
 
-    const base = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + '&lon=' + long + '&appid=' + key;
+    const base = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + '&lon=' + long + '&appid=' + key+'&units=imperial';
+    // const base = `https://api.openweathermap.org/data/2.5/onecall?lat=$(lat)&lon=$(lon)&appid=$(key)`;
     console.log(base);
     fetch(base)
         .then((response) => {
@@ -24,12 +25,27 @@ function initSearch(lat, long) {
         })
         .then(data => {
             console.log(data)
-            document.getElementById('description').textContent = data.weather[0].description;
-            document.getElementById('wind').innerHTML = data.wind.speed;
-            document.getElementById('humid').innerHTML = data.main.humidity;
+            document.getElementById('description').textContent = data.current.weather[0].description;
+            document.getElementById('wind').innerHTML = data.current.wind_speed;
+            document.getElementById('humid').innerHTML = data.current.humidity;
+            document.getElementById('weather-icon').setAttribute('src', `https://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`)
+            document.getElementById('temp').innerHTML = data.current.temp + '&deg;';
+             var htmlContent = "";
+             for(let i=1; i< data.daily.length; i++) {
+                 htmlContent+=` <div id="${i}" class="container card-body">
 
-            var fahrenheit = Math.round(((parseFloat(data.main.temp) - 273.15) * 1.8) + 32);
-            document.getElementById('temp').innerHTML = fahrenheit + '&deg;';
+                 <h4 class="card-title date" class="date"><strong>Day${i}</strong>
+                 <img src="https://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png">
+                 </h4>
+                 <p class="card-text temp-card" class="temp">Temperature: ${data.daily[i].temp.day}<p>
+                 <p class="card-text wind-card" class="wind">Wind Speed: ${data.daily[i].wind_speed}</p>
+                 <p class="card-text humid-card" class="humid">Humidity Level: </p>
+                 <p class="card-text uv-index-card" class="uv-index">UV Index: </p>
+                 
+             </div>`
+            }
+            document.getElementById('daily').innerHTML = htmlContent;
+
         })
 };
 async function getWeather(cityName) {
@@ -39,6 +55,9 @@ async function getWeather(cityName) {
     const weather = await fetch(apiURL);
     let response = await weather.json();
     console.log(response);
+    var lat = response.coord.lat;
+    var lon = response.coord.lon;
+    initSearch(lat, lon);
 }
 citySearch.addEventListener('click', function () {
     const cityInput = city.value;
