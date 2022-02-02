@@ -23,15 +23,37 @@ header {
     padding: 15px;
     /*  add comment here */
     display: flex;
-    justify-content: space-between;
-    /* flex-wrap:wrap; */
+    /* justify-content: space-between; */
+    flex-wrap:wrap;
     
-}
-.col {
-    padding: 5px;
 }
 .card {
     padding: 10px;
+    /*  add comment here */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap:wrap;
+    background-color: rgba(212, 221, 216, 0.8);
+
+}
+.card-header {
+    padding: 10px;
+    /*  add comment here */
+    display: flex;
+    /* justify-content: space-between; */
+    /* flex-direction: column; */
+    /* flex-wrap:wrap; */
+    background-color: rgba(212, 221, 216, 0.8);
+
+}
+.card-text {
+    padding: 10px;
+    /*  add comment here */
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: row;
+    flex-wrap:wrap;
     background-color: rgba(212, 221, 216, 0.8);
 
 }
