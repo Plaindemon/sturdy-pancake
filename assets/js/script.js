@@ -64,7 +64,7 @@ function initSearch(lat, long) {
             document.getElementById('temp').innerHTML = data.current.temp + '&deg;';
             document.getElementById('uvi').innerHTML = data.current.uvi;
             var htmlContent = "";
-            for (let i = 1; i < data.daily.length; i++) {
+            for (let i = 1; len = data.daily.length, i < len && i < 6; i++) {
                 htmlContent += ` <div id="${i}" class="container card-body">
 
                  <h4 class="card-title date" class="date"><strong>Day: ${i}</strong></h4>
