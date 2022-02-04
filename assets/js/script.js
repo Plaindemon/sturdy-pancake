@@ -67,7 +67,7 @@ function initSearch(lat, long) {
             for (let i = 1; i < data.daily.length; i++) {
                 htmlContent += ` <div id="${i}" class="container card-body">
 
-                 <h4 class="card-title date" class="date"><strong>Day: ${dateTime}</strong></h4>
+                 <h4 class="card-title date" class="date"><strong>Day: ${i}</strong></h4>
                  <img  class="img" src="https://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png">
                  
                  <p class="card-text temp-card" class="temp">Temperature: ${data.daily[i].temp.day}<p>
